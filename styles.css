@@ -2,20 +2,22 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #1e1e1e;
-  color: #ffffff;
+  background-color: #0a0a0a; /* Dark black background */
+  color: #ffffff; /* White text */
   line-height: 1.6;
 }
 
 header {
-  background-color: #333;
+  background-color: #1a1a1a; /* Dark gray header */
   padding: 20px;
   text-align: center;
+  border-bottom: 3px solid #1e90ff; /* Blue accent */
 }
 
 header h1 {
   margin: 0;
   font-size: 2.5em;
+  color: #1e90ff; /* Blue header text */
 }
 
 nav ul {
@@ -30,20 +32,25 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #ffffff;
+  color: #ffffff; /* White navigation text */
   text-decoration: none;
   font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #1e90ff; /* Blue hover effect */
 }
 
 section {
   padding: 20px;
   margin: 20px;
-  background-color: #2c2c2c;
+  background-color: #1a1a1a; /* Dark gray sections */
   border-radius: 8px;
+  border: 1px solid #1e90ff; /* Blue border */
 }
 
 h2 {
-  color: #ffa500;
+  color: #1e90ff; /* Blue headings */
 }
 
 .server {
@@ -53,32 +60,40 @@ h2 {
 .gallery-images img {
   margin: 10px;
   border-radius: 8px;
+  border: 2px solid #1e90ff; /* Blue border for images */
 }
 
 .discord-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #7289da;
-  color: #ffffff;
+  background-color: #1e90ff; /* Blue button */
+  color: #ffffff; /* White text */
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
 }
 
+.discord-button:hover {
+  background-color: #0077cc; /* Darker blue on hover */
+}
+
 footer {
   text-align: center;
   padding: 10px;
-  background-color: #333;
+  background-color: #1a1a1a; /* Dark gray footer */
+  border-top: 3px solid #1e90ff; /* Blue accent */
   position: relative;
   bottom: 0;
   width: 100%;
 }
+
 /* FAQ Section Styles */
 #faq {
   padding: 20px;
   margin: 20px;
-  background-color: #2c2c2c;
+  background-color: #1a1a1a; /* Dark gray FAQ section */
   border-radius: 8px;
+  border: 1px solid #1e90ff; /* Blue border */
 }
 
 .faq-item {
@@ -86,7 +101,7 @@ footer {
 }
 
 .faq-item h3 {
-  color: #ffa500;
+  color: #1e90ff; /* Blue FAQ headings */
   margin-bottom: 10px;
 }
 
@@ -100,8 +115,9 @@ footer {
 }
 
 .faq-item code {
-  background-color: #444;
+  background-color: #333; /* Dark gray code background */
   padding: 2px 5px;
   border-radius: 3px;
   font-family: monospace;
+  color: #1e90ff; /* Blue code text */
 }
