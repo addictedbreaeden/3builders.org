@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - [3builders.org support]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a0a0a; /* Dark black background */
+            color: #ffffff; /* White text */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #121212; /* Slightly lighter black for container */
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+        }
+        h1, h2, h3 {
+            color: #1e90ff; /* Bright blue for headings */
+        }
+        a {
+            color: #1e90ff; /* Bright blue for links */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #1e90ff; /* Bright blue for buttons */
+            color: #ffffff;
+            border-radius: 5px;
+            text-align: center;
+            margin: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0077cc; /* Darker blue on hover */
+        }
+        .faq {
+            margin-top: 20px;
+        }
+        .faq h3 {
+            margin-bottom: 10px;
+            color: #1e90ff; /* Bright blue for FAQ headings */
+        }
+        .faq p {
+            margin: 5px 0;
+        }
+        code {
+            background-color: #1e1e1e; /* Dark gray for code blocks */
+            padding: 2px 5px;
+            border-radius: 3px;
+            color: #1e90ff; /* Bright blue for code text */
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ul li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Support - [Your Minecraft Server Name]</h1>
+        <p>Welcome to the support page for <strong>[Your Minecraft Server Name]</strong>! If you’re experiencing issues, have questions, or want to submit suggestions, you’ve come to the right place. Below, you’ll find all the information you need to get help or report problems.</p>
+
+        <h2>How to Get Support</h2>
+        <p>We offer multiple ways to get assistance. Please choose the option that best fits your needs.</p>
+
+        <h3>1. Submit a Support Ticket</h3>
+        <p>If you’re experiencing a bug, have a suggestion, or need help, please submit a support ticket. This ensures your issue is tracked and addressed by our team.</p>
+        <a href="https://3builders.org/support-page/" class="button">Submit a Ticket</a>
+
+        <h3>2. Common Issues and FAQs</h3>
+        <div class="faq">
+            <h3>Q: I can’t connect to the server. What should I do?</h3>
+            <p>Ensure you’re using the correct IP address. Check if the server is online by visiting our Discord or website status page. Restart your game and try again.</p>
+
+            <h3>Q: How do I report a player for breaking the rules?</h3>
+            <p>Use the <code>/report</code> command in-game or submit a ticket with evidence (screenshots or videos).</p>
+
+            <h3>Q: Where can I find the server rules?</h3>
+            <p>Visit our rules page here: <a href="https://3builders.org/rules/">Server Rules</a>.</p>
+
+            <h3>Q: My suggestion/bug report was ignored. Why?</h3>
+            <p>Ensure you’re posting in the correct channels or using the support ticket system. Posts in the wrong channels will be ignored.</p>
+        </div>
+
+        <h3>3. Bug Reports</h3>
+        <p>If you’ve found a bug, please provide as much detail as possible to help us resolve it quickly. Include:</p>
+        <ul>
+            <li>A description of the issue.</li>
+            <li>Steps to reproduce the bug.</li>
+            <li>Screenshots or videos (if applicable).</li>
+            <li>Your Minecraft username and version.</li>
+        </ul>
+        <a href="https://docs.google.com/forms/d/1uwNHOv8BdiH2cXF73sz1zp1-wqpCBmqARQWs-FROhuA/viewform?edit_requested=true&pli=1" class="button">Report a Bug</a>
+
+        <h3>4. Suggestions</h3>
+        <p>We love hearing from our community! If you have an idea to improve the server, submit your suggestion here:</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSemeyg8jYjTZyWrM7vMUYedbMmAh8rh7j89yJNxJLnER5AXwQ/viewform?usp=sf_link" class="button">Submit a Suggestion</a>
+
+        <h3>5. Contact Information</h3>
+        <p>If the support ticket system is not working or you need urgent assistance, you can reach out to us via:</p>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:support@3builders.org">support@3builders.org</a></li>
+            <li><strong>Discord:</strong> Join our Discord server and message a staff member in the <code>#support</code> channel.</li>
+        </ul>
+
+        <h2>Server Status</h2>
+        <p>Check the current status of the server to see if there are any ongoing issues or maintenance:</p>
+        <ul>
+            <li><strong>Website Status Page:</strong> <a href="https://3builders.org/status/">Server Status</a></li>
+            <li><strong>Discord Announcements:</strong> Join our Discord for real-time updates.</li>
+        </ul>
+
+        <h2>Community Guidelines</h2>
+        <p>Please ensure you follow our community rules when seeking support. Disrespectful or inappropriate behavior will not be tolerated. You can review the rules here: <a href="https://3builders.org/rules/">Community Rules</a>.</p>
+
+        <p>Thank you for being part of <strong>[Your Minecraft Server Name]</strong>! We’re here to help and ensure you have the best experience possible.</p>
+
+        <p><em>Last Updated: [Insert Date]</em></p>
+    </div>
+</body>
+</html>
