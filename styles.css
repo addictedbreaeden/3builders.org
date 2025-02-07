@@ -121,3 +121,26 @@ footer {
   font-family: monospace;
   color: #1e90ff; /* Blue code text */
 } 
+#server-stats {
+  padding: 20px;
+  margin: 20px;
+  background-color: #1a1a1a; /* Dark gray background */
+  border-radius: 8px;
+  border: 1px solid #1e90ff; /* Blue border */
+}
+
+#server-stats h2 {
+  color: #1e90ff; /* Blue heading */
+}
+
+#stats p {
+  margin: 10px 0;
+}
+
+#stats strong {
+  color: #1e90ff; /* Blue for labels */
+}
+
+#server-status, #online-players, #server-version {
+  color: #ffffff; /* White for stats */
+}
