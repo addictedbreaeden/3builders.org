@@ -51,7 +51,6 @@
   <div id="stats">
     <p><strong>Status:</strong> <span id="server-status">Loading...</span></p>
     <p><strong>Online Players:</strong> <span id="online-players">Loading...</span></p>
-    <p><strong>Version:</strong> <span id="server-version">Loading...</span></p>
   </div>
 </section>
 
@@ -108,7 +107,7 @@
 
   <div class="faq-item">
     <h3>How do I report a player or issue?</h3>
-    <p>Curently no way to do that. i am working on this a post will be nade when this is avlible</a>.</p>
+    <p>Go to the support page and open a support or bug ticket ticket.</p>
   </div>
 
   <div class="faq-item">
@@ -138,9 +137,8 @@
       const data = await response.json();
 
       // Update server stats
-      document.getElementById("server-status").textContent = data.online ? "Online 🟢" : "Offline 🔴";
+      document.getElementById("server-status").textContent = data.online ? "Online 🟢" : "Offline/maintenance 🔴";
       document.getElementById("online-players").textContent = data.players.online;
-      document.getElementById("server-version").textContent = data.version.name;
     } catch (error) {
       console.error("Error fetching server stats:", error);
       document.getElementById("server-status").textContent = "Error loading stats";
