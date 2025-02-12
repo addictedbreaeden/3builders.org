@@ -140,8 +140,8 @@
       document.getElementById("server-status").textContent = data.online ? "Online 🟢" : "Offline/maintenance 🔴";
       document.getElementById("online-players").textContent = data.players.online;
     } catch (error) {
-      console.error("Error fetching server stats:", error);
-      document.getElementById("server-status").textContent = "Error loading stats";
+      console.error("Offline/maintenance 🔴:", error);
+      document.getElementById("server-status").textContent = "Offline";
     }
   }
 
