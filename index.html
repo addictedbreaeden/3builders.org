@@ -57,32 +57,27 @@ RR<!DOCTYPE html>
     <h3>3Builders.org status</h3>
     <p><strong>Status:</strong> <span id="proxy-status">Loading...</span></p>
     <p><strong>Online Players:</strong> <span id="proxy-players">Loading...</span></p>
-    <p><strong>Version:</strong> <span id="survival-version">Loading...</span></p>
   </div>
   <h2>Individual Server Stats</h2>
   <div class="server-stat">
     <h3>Lobby-server</h3>
     <p><strong>Status:</strong> <span id="lobby-status">Loading...</span></p>
     <p><strong>Online Players:</strong> <span id="lobby-players">Loading...</span></p>
-    <p><strong>Version:</strong> <span id="survival-version">Loading...</span></p>
   </div>
   <div class="server-stat">
     <h3>Survival Server</h3>
     <p><strong>Status:</strong> <span id="survival-status">Loading...</span></p>
     <p><strong>Online Players:</strong> <span id="survival-players">Loading...</span></p>
-    <p><strong>Version:</strong> <span id="survival-version">Loading...</span></p>
   </div>
   <div class="server-stat">
     <h3>Skyblock Server</h3>
     <p><strong>Status:</strong> <span id="skyblock-status">Loading...</span></p>
     <p><strong>Online Players:</strong> <span id="skyblock-players">Loading...</span></p>
-    <p><strong>Version:</strong> <span id="survival-version">Loading...</span></p>
   </div>
   <div class="server-stat">
     <h3>Creative Server</h3>
     <p><strong>Status:</strong> <span id="creative-status">Loading...</span></p>
     <p><strong>Online Players:</strong> <span id="creative-players">Loading...</span></p>
-    <p><strong>Version:</strong> <span id="survival-version">Loading...</span></p>
   </div>
 </section>
 
@@ -183,7 +178,6 @@ async function fetchServerStats(server, elementPrefix) {
     // Update server stats
     document.getElementById(`${elementPrefix}-status`).textContent = data.online ? "Online 🟢" : "Offline 🔴";
     document.getElementById(`${elementPrefix}-players`).textContent = data.players.now;
-    document.getElementById(`${elementPrefix}-version`).textContent = data.server.name;
   } catch (error) {
     console.error(`Error fetching ${elementPrefix} stats:`, error);
     document.getElementById(`${elementPrefix}-status`).textContent = "Loading...";
