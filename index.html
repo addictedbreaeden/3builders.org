@@ -163,22 +163,27 @@ RR<!DOCTYPE html>
   };
 
   // Function to fetch server stats
-  async function fetchServerStats(server, elementPrefix) {
-    try {
-      const response = await fetch(
-        `https://api.mcstatus.io/v2/status/java/${server.ip}:${server.port}`
-      );
-      const data = await response.json();
+async function fetchServerStats(server, elementPrefix) {
+  try {
+    const response = await fetch(
+      `https://mcapi.us/server/status?ip=${server.ip}&port=${server.port}`
+    );
 
-      // Update server stats
-      document.getElementById(`${elementPrefix}-status`).textContent = data.online ? "Online 🟢" : "Offline 🔴";
-      document.getElementById(`${elementPrefix}-players`).textContent = data.players.online;
-      document.getElementById(`${elementPrefix}-version`).textContent = data.version.name;
-    } catch (error) {
-      console.error(`Error fetching ${elementPrefix} stats:`, error);
-      document.getElementById(`${elementPrefix}-status`).textContent = "Loading...";
+    if (!response.ok) {
+      throw new Error(`API error: ${response.status} ${response.statusText}`);
     }
+
+    const data = await response.json();
+
+    // Update server stats
+    document.getElementById(`${elementPrefix}-status`).textContent = data.online ? "Online 🟢" : "Offline 🔴";
+    document.getElementById(`${elementPrefix}-players`).textContent = data.players.now;
+    document.getElementById(`${elementPrefix}-version`).textContent = data.server.name;
+  } catch (error) {
+    console.error(`Error fetching ${elementPrefix} stats:`, error);
+    document.getElementById(`${elementPrefix}-status`).textContent = "Error loading stats";
   }
+}
 
   // Fetch stats for all servers when the page loads
   fetchServerStats(servers.survival, "survival");
