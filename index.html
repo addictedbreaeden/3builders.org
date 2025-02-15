@@ -51,10 +51,25 @@
     <p><strong>Bedrock Edition:</strong> mc.3builders.org:19132</p>
     <p>Or play.3builders.org:19132</p>
     <p><strong>Supports versions 1.8 to 1.21.4</strong></p>
+<section id="server-stats">
   <h2>Server Stats</h2>
-  <div id="stats">
-    <p><strong>Status:</strong> <span id="server-status">Loading...</span></p>
-    <p><strong>Online Players:</strong> <span id="online-players">Loading...</span></p>
+  <div class="server-stat">
+    <h3>Survival Server</h3>
+    <p><strong>Status:</strong> <span id="survival-status">Loading...</span></p>
+    <p><strong>Online Players:</strong> <span id="survival-players">Loading...</span></p>
+    <p><strong>Version:</strong> <span id="survival-version">Loading...</span></p>
+  </div>
+  <div class="server-stat">
+    <h3>Skyblock Server</h3>
+    <p><strong>Status:</strong> <span id="skyblock-status">Loading...</span></p>
+    <p><strong>Online Players:</strong> <span id="skyblock-players">Loading...</span></p>
+    <p><strong>Version:</strong> <span id="skyblock-version">Loading...</span></p>
+  </div>
+  <div class="server-stat">
+    <h3>Creative Server</h3>
+    <p><strong>Status:</strong> <span id="creative-status">Loading...</span></p>
+    <p><strong>Online Players:</strong> <span id="creative-players">Loading...</span></p>
+    <p><strong>Version:</strong> <span id="creative-version">Loading...</span></p>
   </div>
 </section>
 
@@ -129,31 +144,43 @@
   <footer>
     <p>&copy; 2025 3Builders.org. All rights reserved.</p>
   </footer>
-  <script>
-  // Server IP and port (replace with your server details)
-  const serverIP = "mc.3builders.org";
-  const serverPort = 25565; // Default Minecraft port (change if needed)
+<script>
+  // Server IPs and ports (replace with your server details)
+  const servers = {
+    survival: { ip: "mc.3builders.org", port: 25569 }, // Survival server
+    skyblock: { ip: "mc.3builders.org", port: 25580 }, // Skyblock server
+    creative: { ip: "mc.3builders.org", port: 25567 }, // Creative server
+  };
 
   // Function to fetch server stats
-  async function fetchServerStats() {
+  async function fetchServerStats(server, elementPrefix) {
     try {
-      const response = await fetch(`https://api.mcstatus.io/v2/status/java/${serverIP}:${serverPort}`);
+      const response = await fetch(
+        `https://api.mcstatus.io/v2/status/java/${server.ip}:${server.port}`
+      );
       const data = await response.json();
 
       // Update server stats
-      document.getElementById("server-status").textContent = data.online ? "Online 🟢" : "Offline/maintenance 🔴";
-      document.getElementById("online-players").textContent = data.players.online;
+      document.getElementById(`${elementPrefix}-status`).textContent = data.online ? "Online 🟢" : "Offline 🔴";
+      document.getElementById(`${elementPrefix}-players`).textContent = data.players.online;
+      document.getElementById(`${elementPrefix}-version`).textContent = data.version.name;
     } catch (error) {
-      console.error("Offline/maintenance 🔴:", error);
-      document.getElementById("server-status").textContent = "Offline";
+      console.error(`Error fetching ${elementPrefix} stats:`, error);
+      document.getElementById(`${elementPrefix}-status`).textContent = "Error loading stats";
     }
   }
 
-  // Fetch stats when the page loads
-  fetchServerStats();
+  // Fetch stats for all servers when the page loads
+  fetchServerStats(servers.survival, "survival");
+  fetchServerStats(servers.skyblock, "skyblock");
+  fetchServerStats(servers.creative, "creative");
 
   // Optional: Refresh stats every 60 seconds
-  setInterval(fetchServerStats, 60000);
+  setInterval(() => {
+    fetchServerStats(servers.survival, "survival");
+    fetchServerStats(servers.skyblock, "skyblock");
+    fetchServerStats(servers.creative, "creative");
+  }, 60000);
 </script>
 </body>
 </html>
