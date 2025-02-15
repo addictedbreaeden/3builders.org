@@ -54,22 +54,33 @@
 <section id="server-stats">
   <h2>Server Stats</h2>
   <div class="server-stat">
+    <h3>Lobby</h3>
+    <p><strong>Status:</strong> <span id="proxy-status">Loading...</span></p>
+    <p><strong>Online Players:</strong> <span id="proxy-players">Loading...</span></p>
+  </div>
+<section id="server-stats">
+  <h2>Server Stats</h2>
+  <div class="server-stat">
+    <h3>Lobby</h3>
+    <p><strong>Status:</strong> <span id="lobby-status">Loading...</span></p>
+    <p><strong>Online Players:</strong> <span id="lobby-players">Loading...</span></p>
+  </div>
+<section id="server-stats">
+  <h2>Server Stats</h2>
+  <div class="server-stat">
     <h3>Survival Server</h3>
     <p><strong>Status:</strong> <span id="survival-status">Loading...</span></p>
     <p><strong>Online Players:</strong> <span id="survival-players">Loading...</span></p>
-    <p><strong>Version:</strong> <span id="survival-version">Loading...</span></p>
   </div>
   <div class="server-stat">
     <h3>Skyblock Server</h3>
     <p><strong>Status:</strong> <span id="skyblock-status">Loading...</span></p>
     <p><strong>Online Players:</strong> <span id="skyblock-players">Loading...</span></p>
-    <p><strong>Version:</strong> <span id="skyblock-version">Loading...</span></p>
   </div>
   <div class="server-stat">
     <h3>Creative Server</h3>
     <p><strong>Status:</strong> <span id="creative-status">Loading...</span></p>
     <p><strong>Online Players:</strong> <span id="creative-players">Loading...</span></p>
-    <p><strong>Version:</strong> <span id="creative-version">Loading...</span></p>
   </div>
 </section>
 
@@ -150,6 +161,8 @@
     survival: { ip: "mc.3builders.org", port: 25569 }, // Survival server
     skyblock: { ip: "mc.3builders.org", port: 25580 }, // Skyblock server
     creative: { ip: "mc.3builders.org", port: 25567 }, // Creative server
+    Lobby: { ip: "mc.3builders.org", port: 25566 }, // lobby server
+    proxy: { ip: "mc.3builders.org", port: 25565 }, // proxy server
   };
 
   // Function to fetch server stats
@@ -174,13 +187,19 @@
   fetchServerStats(servers.survival, "survival");
   fetchServerStats(servers.skyblock, "skyblock");
   fetchServerStats(servers.creative, "creative");
+  fetchServerStats(servers.lobby, "lobby");
+  fetchServerStats(servers.proxy, "proxy");
 
   // Optional: Refresh stats every 60 seconds
   setInterval(() => {
     fetchServerStats(servers.survival, "survival");
     fetchServerStats(servers.skyblock, "skyblock");
     fetchServerStats(servers.creative, "creative");
-  }, 60000);
+    fetchServerStats(servers.lobby, "lobby");
+    fetchServerStats(servers.proxy, "proxy");
+
+
+  }, 30000);
 </script>
 </body>
 </html>
