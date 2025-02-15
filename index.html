@@ -186,7 +186,7 @@ async function fetchServerStats(server, elementPrefix) {
     document.getElementById(`${elementPrefix}-version`).textContent = data.server.name;
   } catch (error) {
     console.error(`Error fetching ${elementPrefix} stats:`, error);
-    document.getElementById(`${elementPrefix}-status`).textContent = "Error loading stats";
+    document.getElementById(`${elementPrefix}-status`).textContent = "Loading...";
   }
 }
 
