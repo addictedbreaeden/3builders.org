@@ -157,3 +157,17 @@ footer {
 .server-stat span {
   color: #ffffff; /* White for stats */
 }
+#server-image {
+  padding: 20px;
+  margin: 20px;
+  background-color: #1a1a1a; /* Dark gray background */
+  border-radius: 8px;
+  border: 1px solid #1e90ff; /* Blue border */
+  text-align: center; /* Center the image */
+}
+
+.server-banner {
+  max-width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners */
+}
