@@ -167,7 +167,7 @@ footer {
 }
 
 .server-banner {
-  max-width: 100%; /* Make the image responsive */
+  max-width: 80%; /* Make the image responsive */
   height: auto; /* Maintain aspect ratio */
-  border-radius: 8px; /* Rounded corners */
+  border-radius: auto; /* Rounded corners */
 }
